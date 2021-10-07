@@ -1,0 +1,176 @@
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\LabyBot.exe.config
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\LabyBot.exe
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\LabyBot.pdb
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MainWindow.g.cs
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\App.g.cs
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot_MarkupCompile.cache
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot_MarkupCompile.lref
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MainWindow.baml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\Theme\MenuButtonTheme.baml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.g.resources
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.Properties.Resources.resources
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.GenerateResource.cache
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.CoreCompileInputs.cache
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.exe
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.pdb
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\App.baml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\Images\128.ico
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\Images\128.png
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\Images\close.png
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\Images\dock-window.png
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\HomeView.g.cs
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\HomeView.baml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\AboutView.g.cs
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\SettingsView.g.cs
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\AboutView.baml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\SettingsView.baml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csprojAssemblyReference.cache
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignColors.dll
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.CopyComplete
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\AdditionalFiles\install.bat
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\AdditionalFiles\start.bat
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\AdditionalFiles\geckodriver.exe
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\AdditionalFiles\LabyBot_webdriver.py
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\CmlLib.dll
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\DiscordWebhook.dll
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\SevenZip.dll
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\SevenZip.xml
+C:\Users\Florian\source\repos\LabyBot\LabyBot\bin\Debug\AdditionalFiles\credentials.txt
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Images\128.png
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Images\128.ico
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Images\close.png
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Images\dock-window.png
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\AdditionalFiles\geckodriver.exe
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\LabyBot.exe.config
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\LabyBot.exe
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\LabyBot.pdb
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\CmlLib.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\DiscordWebhook.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignColors.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\SevenZip.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\SevenZip.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.AssemblyReference.cache
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MainWindow.g.cs
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\AboutView.g.cs
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\HomeView.g.cs
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\SettingsView.g.cs
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\App.g.cs
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot_MarkupCompile.cache
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot_MarkupCompile.lref
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\App.baml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MainWindow.baml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\AboutView.baml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\HomeView.baml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\MVVM\View\SettingsView.baml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\Theme\MenuButtonTheme.baml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.g.resources
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.Properties.Resources.resources
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.GenerateResource.cache
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.CoreCompileInputs.cache
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.CopyComplete
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.exe
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Debug\LabyBot.pdb
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\WebDriver.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Core.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Rest.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Webhook.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Interactive.Async.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Linq.Async.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Core.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Rest.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Webhook.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Interactive.Async.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Linq.Async.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\bin\Debug\Images\play.png
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Images\128.png
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Images\128.ico
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Images\close.png
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Images\dock-window.png
+D:\Github repos\LabyBot\LabyBot\bin\Debug\AdditionalFiles\geckodriver.exe
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Images\play.png
+D:\Github repos\LabyBot\LabyBot\bin\Debug\LabyBot.exe.config
+D:\Github repos\LabyBot\LabyBot\bin\Debug\LabyBot.exe
+D:\Github repos\LabyBot\LabyBot\bin\Debug\LabyBot.pdb
+D:\Github repos\LabyBot\LabyBot\bin\Debug\CmlLib.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Core.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Rest.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Webhook.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\DiscordWebhook.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\MaterialDesignColors.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Newtonsoft.Json.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\SevenZip.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Collections.Immutable.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Interactive.Async.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Linq.Async.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\WebDriver.dll
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Core.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Rest.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Discord.Net.Webhook.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.pdb
+D:\Github repos\LabyBot\LabyBot\bin\Debug\ICSharpCode.SharpZipLib.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\MaterialDesignColors.pdb
+D:\Github repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Github repos\LabyBot\LabyBot\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\Newtonsoft.Json.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\SevenZip.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Collections.Immutable.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Interactive.Async.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Linq.Async.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Github repos\LabyBot\LabyBot\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.AssemblyReference.cache
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MainWindow.g.cs
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MVVM\View\AboutView.g.cs
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MVVM\View\HomeView.g.cs
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MVVM\View\SettingsView.g.cs
+D:\Github repos\LabyBot\LabyBot\obj\Debug\App.g.cs
+D:\Github repos\LabyBot\LabyBot\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot_MarkupCompile.cache
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot_MarkupCompile.lref
+D:\Github repos\LabyBot\LabyBot\obj\Debug\App.baml
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MainWindow.baml
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MVVM\View\AboutView.baml
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MVVM\View\HomeView.baml
+D:\Github repos\LabyBot\LabyBot\obj\Debug\MVVM\View\SettingsView.baml
+D:\Github repos\LabyBot\LabyBot\obj\Debug\Theme\MenuButtonTheme.baml
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.g.resources
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.Properties.Resources.resources
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.GenerateResource.cache
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.CoreCompileInputs.cache
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.csproj.CopyComplete
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.exe
+D:\Github repos\LabyBot\LabyBot\obj\Debug\LabyBot.pdb
