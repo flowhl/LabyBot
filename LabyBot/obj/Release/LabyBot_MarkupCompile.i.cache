@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\obj\Release\
+D:\Github repos\LabyBot\LabyBot\obj\Release\
 LabyBot
 none
 false
 TRACE
-C:\Users\Florian Wahl\source\repos\LabyBot\LabyBot\App.xaml
-5-423353700
+D:\Github repos\LabyBot\LabyBot\App.xaml
+6-181569181
 
-16157371695
-137511740196
-MainWindow.xaml;MVVM\View\AboutView.xaml;MVVM\View\HomeView.xaml;MVVM\View\SettingsView.xaml;Theme\MenuButtonTheme.xaml;
+17-1702152450
+148-1803770001
+MainWindow.xaml;MVVM\View\AboutView.xaml;MVVM\View\HomeView.xaml;MVVM\View\SettingsView.xaml;Theme\MenuButtonTheme.xaml;toggleswitch.xaml;
 
 False
 

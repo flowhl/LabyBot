@@ -1,0 +1,36 @@
+﻿[10/10/21 20:09:45] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.0.0.nupkg
+[10/10/21 20:09:45] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[10/10/21 20:09:45] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.0.nupkg
+[10/10/21 20:09:45] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.0.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.0.0-full.nupkg
+[10/10/21 20:09:45] info: ReleasePackage: Extracting dependent packages: []
+[10/10/21 20:09:45] info: ReleasePackage: Removing unnecessary data
+[10/10/21 20:09:46] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[10/10/21 20:09:48] info: Program: Building embedded zip file for Setup.exe
+[10/10/21 20:09:58] info: Program: Finished Squirrel Updater
+[10/10/21 20:15:38] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.0.0.nupkg
+[10/10/21 20:15:38] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[10/10/21 20:15:38] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.0.nupkg
+[10/10/21 20:15:38] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.0.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.0.0-full.nupkg
+[10/10/21 20:15:39] info: ReleasePackage: Extracting dependent packages: []
+[10/10/21 20:15:39] info: ReleasePackage: Removing unnecessary data
+[10/10/21 20:15:39] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[10/10/21 20:15:40] info: Program: Building embedded zip file for Setup.exe
+[10/10/21 20:15:50] info: Program: Finished Squirrel Updater
+[10/10/21 20:15:55] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.0.0.nupkg
+[10/10/21 20:15:55] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[10/10/21 20:15:55] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.0.nupkg
+[10/10/21 20:15:55] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.0.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.0.0-full.nupkg
+[10/10/21 20:15:55] info: ReleasePackage: Extracting dependent packages: []
+[10/10/21 20:15:55] info: ReleasePackage: Removing unnecessary data
+[10/10/21 20:15:55] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[10/10/21 20:15:57] info: Program: Building embedded zip file for Setup.exe
+[10/10/21 20:16:06] info: Program: Finished Squirrel Updater
+[13/10/21 20:58:45] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.0.1.nupkg
+[13/10/21 20:58:45] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[13/10/21 20:58:45] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.1.nupkg
+[13/10/21 20:58:45] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.1.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.0.1-full.nupkg
+[13/10/21 20:58:45] info: ReleasePackage: Extracting dependent packages: []
+[13/10/21 20:58:45] info: ReleasePackage: Removing unnecessary data
+[13/10/21 20:58:45] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[13/10/21 20:58:51] info: Program: Building embedded zip file for Setup.exe
+[13/10/21 20:59:03] info: Program: Finished Squirrel Updater

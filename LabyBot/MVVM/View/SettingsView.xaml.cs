@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Reflection;
+using Microsoft.Win32;
+using IWshRuntimeLibrary;
 
 namespace LabyBot.MVVM.View
 {
@@ -22,12 +25,13 @@ namespace LabyBot.MVVM.View
     public partial class SettingsView : UserControl
     {
 
-        string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        readonly string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         public SettingsView()
         {
             InitializeComponent();
-            loadSettings();
+            LoadSettings();
         }
+        
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
@@ -38,10 +42,11 @@ namespace LabyBot.MVVM.View
                 foreach (string line in newlines)
                     outputFile.WriteLine(line);
             }
+            
         }
-        private void loadSettings()
+        private void LoadSettings()
         {
-            string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
+            string[] lines = System.IO.File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
             StartMinimizedInput.IsChecked = Convert.ToBoolean(lines[0]);
             webhookInput.Text = lines[1];
             try
@@ -56,6 +61,45 @@ namespace LabyBot.MVVM.View
             {
 
             }
+            
+        }
+
+
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {            
+            try
+            {
+                string destination = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+                System.IO.File.Delete( destination + @"\Labybot.lnk"); 
+            }
+            catch
+            {
+                MessageBox.Show("Failed to remove from startup");
+            }
+            
+        }
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Assembly curAssembly = Assembly.GetExecutingAssembly();
+                string applocation = curAssembly.Location;
+                string destination = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+
+                WshShell wshShell = new WshShell();
+                string fileName = destination + "\\" + "Labybot" + ".lnk";
+                IWshShortcut shortcut = (IWshShortcut)wshShell.CreateShortcut(fileName);
+                shortcut.TargetPath = applocation;
+                shortcut.Save();
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Failed to add to startup");
+            }
+            
             
         }
     }

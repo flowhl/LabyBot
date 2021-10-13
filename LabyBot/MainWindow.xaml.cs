@@ -1,21 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Forms = System.Windows.Forms;
-using System.Drawing;
 using System.IO;
-
+using Squirrel;
 namespace LabyBot
 {
     /// <summary>
@@ -23,33 +11,33 @@ namespace LabyBot
     /// </summary>
     public partial class MainWindow : Window
     {
-        string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        readonly string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private readonly Forms.NotifyIcon _notifyIcon = new Forms.NotifyIcon();
-        private Window _MainWindow = Application.Current.MainWindow;
-        bool StartMinimized;
         public MainWindow()
         {
-            string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
-            StartMinimized = Convert.ToBoolean(lines[0]);
-
-            if (StartMinimized)
-            {
-                this.Visibility = Visibility.Hidden;
-                this.ShowInTaskbar = false;
-                Application.Current.MainWindow.WindowState = WindowState.Minimized;
-
-                _notifyIcon.Icon = new System.Drawing.Icon(@"Images\128.ico");
-                _notifyIcon.Text = "Labybot Client";
-                _notifyIcon.Click += NotifyIcon_Click;
-
-                _notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();
-                _notifyIcon.ContextMenuStrip.Items.Add("Show", System.Drawing.Image.FromFile(@"Images\dock-window.png"), OnShowClicked);
-                _notifyIcon.ContextMenuStrip.Items.Add("Quit", System.Drawing.Image.FromFile(@"Images\close.png"), OnQuitClicked);
-
-                _notifyIcon.Visible = true;
-            }
+            
             
             InitializeComponent();
+        }
+
+        
+
+        public void MinimizeAll()
+        {
+            this.Visibility = Visibility.Hidden;
+            this.ShowInTaskbar = false;
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+
+            _notifyIcon.Icon = new System.Drawing.Icon(@"Images\128.ico");
+            _notifyIcon.Text = "Labybot Client";
+            _notifyIcon.Click += NotifyIcon_Click;
+
+            _notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();
+            _notifyIcon.ContextMenuStrip.Items.Add("Show", System.Drawing.Image.FromFile(@"Images\dock-window.png"), OnShowClicked);
+            _notifyIcon.ContextMenuStrip.Items.Add("Quit", System.Drawing.Image.FromFile(@"Images\close.png"), OnQuitClicked);
+
+            _notifyIcon.Visible = true;
+
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

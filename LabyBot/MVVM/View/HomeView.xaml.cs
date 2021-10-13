@@ -47,21 +47,47 @@ namespace LabyBot.MVVM.View
         Workhandler workhandler = new Workhandler();
         bool runable = false;
         string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        bool StartMinimized = false;
         public HomeView()
         {
             InitializeComponent();
             DataContext = dc;
             ChangeMcStatus("stopped", Brushes.Red);
             ChangeWebStatus("stopped", Brushes.Red);
-            string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
-            if (Convert.ToBoolean(lines[0]))
+            if (File.Exists(System.IO.Path.Combine(docPath, "labybotsettings.txt")))
             {
+                try
+                {
+                    string[] templines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
+                    StartMinimized = Convert.ToBoolean(templines[0]);
+                }
+                catch
+                {
+                    MessageBox.Show("Settings file damaged");
+                }
+            }
+            else
+            {
+                MessageBox.Show("no settings file found - created new one in documents");
+                string[] newlines = { false + "", "" };
+
+                using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "labybotsettings.txt")))
+                {
+                    foreach (string line in newlines)
+                        outputFile.WriteLine(line);
+                }
+            }
+
+            if (StartMinimized)
+            {
+                wnd.MinimizeAll();
                 workhandler.SetRunable(true);
                 runable = true;
                 McInstances(true);
                 dc.ConsoleOutput.Add("starting all");
             }
         }
+            
 
         private void StartAllButton_Click(object sender, RoutedEventArgs e)
         {

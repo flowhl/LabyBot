@@ -27,17 +27,17 @@ namespace LabyBot.MVVM.View
 
         private void DiscordButton_Click(object sender, RoutedEventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://discord.gg/TZUtdtjkfM");
         }
 
         private void WebsiteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://florianwahl.digital/labybot");
         }
 
         private void OtherSoftwareButton_Click(object sender, RoutedEventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://florianwahl.digital/software/");
         }
     }
 }

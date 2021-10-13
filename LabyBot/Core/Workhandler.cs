@@ -35,14 +35,13 @@ namespace LabyBot
     {
 
         private const int SW_SHOWMINIMIZED = 2;
-        private const UInt32 WM_CLOSE = 0x0010;
 
         [DllImport("user32.dll")]
         private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
         bool runable = false;
-        string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        readonly string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         public Workhandler()
         {
@@ -58,8 +57,8 @@ namespace LabyBot
         public void StartWebWorker(string name, string pw)
         {
             BackgroundWorker webWorker = new BackgroundWorker();
-            webWorker.DoWork += webWorker_DoWork;
-            webWorker.RunWorkerCompleted += webWorker_RunWorkerCompleted;
+            webWorker.DoWork += WebWorker_DoWork;
+            webWorker.RunWorkerCompleted += WebWorker_RunWorkerCompleted;
             webWorker.RunWorkerAsync(name + ";" + pw);
 
         }
@@ -71,11 +70,11 @@ namespace LabyBot
             mcWorker.RunWorkerAsync(email + ";" + pw);
         }
 
-        private void webWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void WebWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
         }
-        async void webWorker_DoWork(object sender, DoWorkEventArgs e)
+        async void WebWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             string name = e.Argument.ToString().Split(';')[0];
             string pw = e.Argument.ToString().Split(';')[1];
@@ -326,14 +325,6 @@ namespace LabyBot
             foreach (var process in Process.GetProcessesByName(name))
             {
                 process.Kill();
-            }
-        }
-        static void Minimize(string title)
-        {
-            IntPtr hWnd = FindWindow(title);
-            if (!hWnd.Equals(IntPtr.Zero))
-            {
-                ShowWindowAsync(hWnd, SW_SHOWMINIMIZED);
             }
         }
         public static IntPtr FindWindow(string titleName)

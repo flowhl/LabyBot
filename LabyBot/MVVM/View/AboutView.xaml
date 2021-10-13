@@ -9,7 +9,7 @@
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal">
             <Label Content="Labybot Autoclaimer" Foreground="White" FontSize="22" FontWeight="Bold"/>
-            <Label Content="Version 1.0.0" Foreground="White" FontSize="18" FontWeight="Regular" VerticalContentAlignment="Bottom" Margin="10,0,0,0"/>
+            <Label Content="Version 1.0.1" Foreground="White" FontSize="18" FontWeight="Regular" VerticalContentAlignment="Bottom" Margin="10,0,0,0"/>
         </StackPanel>
         
         <Label Content="This program is in no way associated with Labymod / Laby.net - use it as your own risk!" FontSize="12" Foreground="Gray" Margin="0,0,0,0"/>        
