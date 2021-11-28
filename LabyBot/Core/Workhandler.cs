@@ -1,26 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using CmlLib.Core;
 using CmlLib.Core.Auth;
-using DiscordWebhook;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
@@ -53,7 +39,11 @@ namespace LabyBot
             runable = status;
         }
 
-
+        /// <summary>
+        /// starts the webworker
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="pw"></param>
         public void StartWebWorker(string name, string pw)
         {
             BackgroundWorker webWorker = new BackgroundWorker();
@@ -62,6 +52,12 @@ namespace LabyBot
             webWorker.RunWorkerAsync(name + ";" + pw);
 
         }
+
+        /// <summary>
+        /// starts the mc worker
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="pw"></param>
         public void StartMCWorker(string email, string pw)
         {
             BackgroundWorker mcWorker = new BackgroundWorker();
@@ -74,164 +70,191 @@ namespace LabyBot
         {
 
         }
+
+        /// <summary>
+        /// Work function of the webworker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void WebWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             string name = e.Argument.ToString().Split(';')[0];
             string pw = e.Argument.ToString().Split(';')[1];
-            var service = FirefoxDriverService.CreateDefaultService();
-            service.HideCommandPromptWindow = true;
-            var options = new FirefoxOptions();
-            options.AddArgument("--headless");
-
-
-            using (IWebDriver driver = new FirefoxDriver(service, options))
+            try
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                driver.Navigate().GoToUrl("https://www.labymod.net/en");
-                await Task.Delay(5000);
+                var service = FirefoxDriverService.CreateDefaultService();
+                service.HideCommandPromptWindow = true;
+                var options = new FirefoxOptions();
+                options.AddArgument("--headless");
+            
 
-                driver.FindElement(By.CssSelector("a.openLogin")).Click(); //open login
-                driver.FindElement(By.Id("username")).SendKeys(name); //send name
-                driver.FindElement(By.Id("password")).SendKeys(pw); //send password
-                if (driver.FindElement(By.Id("memLogin")).Selected)
-                { //make sure remember me is unchecked
-                    driver.FindElement(By.Id("memLogin")).Click();
-                }
-                driver.FindElement(By.CssSelector("button.btn-custom.btn-icon.btn-login")).Submit(); //submit login
 
-                await Task.Delay(2000);
-
-                //Test if email 2 auth required
-                try
+                using (IWebDriver driver = new FirefoxDriver(service, options))
                 {
-                    if (driver.FindElement(By.Id("login-verification-key")).Displayed)
-                    {
-                    string auth = Interaction.InputBox("please insert the verification code from the email of " + name, "2 factor auth required", "");
-                        if (auth == "" || auth == null)
-                        {
-                            MessageBox.Show("Auth is empty - please restart and try again!");
-                                return;
-                        }
-                    driver.FindElement(By.Id("login-verification-key")).SendKeys(auth);
-                    driver.FindElement(By.XPath("//*[@id=\"navigation\"]/div[2]/div/div/div/div/div/button")).Click();
-                    //dc.ConsoleOutput.Add("email auth completed");
-                    await Task.Delay(2000);
-                    }
-                    
-                }
-                catch
-                {
-                    
-                }
-
-                //Test if 2FA
-                try
-                {
-                    driver.FindElement(By.Id("two-fa-input-swal"));
-                    System.Windows.Forms.MessageBox.Show("please disable 2 factor auth on the account: " + name);
-                    //dc.ConsoleOutput.Add("please disable 2 factor auth on the account: " + name);
-                    SendWebhook(name, "please disable 2 factor auth on the account: " + name, Discord.Color.Red);
-                    return;
-                }
-                catch
-                {
-
-                }
-
-                //Test if wrong pw
-
-                try
-                {
-                    driver.FindElement(By.XPath("//*[contains(text(), 'Wrong username/password')]"));
-                    MessageBox.Show("wrong password for " + name);
-                    SendWebhook(name, "wrong password for " + name, Discord.Color.Red);
-                    return;
-                }
-                catch
-                {
-
-                }
-
-                //switch to dashboard
-                driver.Navigate().GoToUrl("https://labymod.net/en/dashboard");
-                await Task.Delay(5000);
-
-                //accept cookies
-
-                try
-                {
-                    driver.FindElement(By.CssSelector("a.btn.btn-primary.js-accept-cookies")).Click();
-                }
-                catch
-                {
-                }
-
-                try
-                {
-                    //driver.FindElement(By.CssSelector("button.btn.btn-sm.btn-custom.pull-right.claimRewardBtn")).Click();
-
-                    var objects = driver.FindElements(By.CssSelector("button.btn.btn-sm.btn-custom.pull-right.claimRewardBtn"));
-                    foreach (IWebElement obj in objects)
-                    {
-                        obj.Click();
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("no claimbutton found!");
+                    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                     try
                     {
-                        driver.FindElement(By.CssSelector("span.status"));
+                        driver.Navigate().GoToUrl("https://www.labymod.net/en");
+                        await Task.Delay(5000);
+
+                        driver.FindElement(By.CssSelector("a.openLogin")).Click(); //open login
+                        driver.FindElement(By.Id("username")).SendKeys(name); //send name
+                        driver.FindElement(By.Id("password")).SendKeys(pw); //send password
+                        if (driver.FindElement(By.Id("memLogin")).Selected)
+                        { //make sure remember me is unchecked
+                            driver.FindElement(By.Id("memLogin")).Click();
+                        }
+                        driver.FindElement(By.CssSelector("button.btn-custom.btn-icon.btn-login")).Submit(); //submit login
+
+                        await Task.Delay(2000);
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Webdriver error on initialization: " + exception.Message);
+                    }
+
+
+                    //Test if email 2 auth required
+                    try
+                    {
+                        if (driver.FindElement(By.Id("login-verification-key")).Displayed)
+                        {
+                        string auth = Interaction.InputBox("please insert the verification code from the email of " + name, "2 factor auth required", "");
+                            if (auth == "" || auth == null)
+                            {
+                                MessageBox.Show("Auth is empty - please restart and try again!");
+                                    return;
+                            }
+                        driver.FindElement(By.Id("login-verification-key")).SendKeys(auth);
+                        driver.FindElement(By.XPath("//*[@id=\"navigation\"]/div[2]/div/div/div/div/div/button")).Click();
+                        //dc.ConsoleOutput.Add("email auth completed");
+                        await Task.Delay(2000);
+                        }
+                    
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Error on 2step auth: " + exception.Message);
+                    }
+
+                    //Test if 2FA
+                    try
+                    {
+                        driver.FindElement(By.Id("two-fa-input-swal"));
+                        System.Windows.Forms.MessageBox.Show("please disable 2 factor auth on the account: " + name);
+                        //dc.ConsoleOutput.Add("please disable 2 factor auth on the account: " + name);
+                        SendWebhook(name, "please disable 2 factor auth on the account: " + name, Discord.Color.Red);
+                        return;
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Error on 2FA: " + exception.Message);
+                    }
+
+                    //Test if wrong pw
+
+                    try
+                    {
+                        driver.FindElement(By.XPath("//*[contains(text(), 'Wrong username/password')]"));
+                        MessageBox.Show("wrong password for " + name);
+                        SendWebhook(name, "wrong password for " + name, Discord.Color.Red);
+                        return;
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("" + exception.Message);
+                    }
+
+                    //switch to dashboard
+                    try
+                    {
+                         driver.Navigate().GoToUrl("https://labymod.net/en/dashboard");
+                         await Task.Delay(5000);
+                    }
+                    catch(Exception exception)
+                    {
+                        MessageBox.Show("Error when trying to reach the Labymod dashboard: " + exception.Message);
+                    }
+                    
+
+                    //accept cookies
+
+                    try
+                    {
+                        driver.FindElement(By.CssSelector("a.btn.btn-primary.js-accept-cookies")).Click();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Error when trying to accept the cookies: " + exception.Message);
+                    }
+
+                    try
+                    {
+                        //driver.FindElement(By.CssSelector("button.btn.btn-sm.btn-custom.pull-right.claimRewardBtn")).Click();
+
+                        var objects = driver.FindElements(By.CssSelector("button.btn.btn-sm.btn-custom.pull-right.claimRewardBtn"));
+                        foreach (IWebElement obj in objects)
+                        {
+                            obj.Click();
+                        }
                     }
                     catch
                     {
-                        //dc.ConsoleOutput.Add("Allready claimed");
-                    }
-
-                }
-                try
-                {
-                    if (driver.FindElement(By.CssSelector("div.dailyCoinValue")).Text == "??")
-                    {
-                        MessageBox.Show("no reward claimable");
-                        SendWebhook(name, "no reward claimable", Discord.Color.Red);
-
-
-                    }
-                    else
-                    {
+                        MessageBox.Show("no claimbutton found!");
                         try
                         {
                             driver.FindElement(By.CssSelector("span.status"));
-
                         }
-                        catch
+                        catch (Exception exception)
                         {
-
+                            MessageBox.Show("Error when trying to claim: " + exception.Message);
                         }
 
                     }
-                }
-                catch
-                {
-                    return;
-                }
+                    try
+                    {
+                        if (driver.FindElement(By.CssSelector("div.dailyCoinValue")).Text == "??")
+                        {
+                            MessageBox.Show("no reward claimable");
+                            SendWebhook(name, "no reward claimable", Discord.Color.Red);
+                        }
+                        else
+                        {
+                                driver.FindElement(By.CssSelector("span.status"));                            
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Error when checking if reward was claimed: " + exception.Message);
+                    }
+                    try
+                    {
+                        driver.Navigate().GoToUrl("https://labymod.net/en/dashboard");
+                        await Task.Delay(2000);
 
-                driver.Navigate().GoToUrl("https://labymod.net/en/dashboard");
-                await Task.Delay(2000);
+                        //send stats
 
-                //send stats
+                        SendWebhook(name, driver.FindElement(By.CssSelector("div.dailyCoinValue")).Text + " labycoins earned - total coins: " + driver.FindElement(By.CssSelector("span.value")).Text + " - streak: " + driver.FindElement(By.CssSelector("span.value.streak")).Text + " :fire: ", Discord.Color.Blue);
 
-                SendWebhook(name, driver.FindElement(By.CssSelector("div.dailyCoinValue")).Text + " labycoins earned - total coins: " + driver.FindElement(By.CssSelector("span.value")).Text + " - streak: " + driver.FindElement(By.CssSelector("span.value.streak")).Text + " :fire: ", Discord.Color.Blue);
+                        //log out
 
-                //log out
+                        driver.Navigate().GoToUrl("https://www.labymod.net/logout");
+                        await Task.Delay(2000);
+                        driver.Navigate().GoToUrl("https://www.labymod.net/logout");
+                        driver.Close();
+                        driver.Quit();
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Error logging out: " + exception.Message);
+                    }
 
-                driver.Navigate().GoToUrl("https://www.labymod.net/logout");
-                await Task.Delay(2000);
-                driver.Navigate().GoToUrl("https://www.labymod.net/logout");
-                driver.Close();
-                driver.Quit();
-                KillWindow("Firefox");
+                    KillWindow("Firefox");
+            }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error creating firefox driver: " + exception.Message);
             }
         }
         private void MCworker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -239,87 +262,117 @@ namespace LabyBot
 
         }
 
+        /// <summary>
+        /// Runs the McWorker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void MCworker_DoWork(object sender, DoWorkEventArgs e)
         {
             string email = e.Argument.ToString().Split(';')[0];
             string pw = e.Argument.ToString().Split(';')[1];
 
-            if (!runable)
-            {
-                return;
-            }
-            var login = new MLogin();
-            var response = login.Authenticate(email, pw);
-            //dc.ConsoleOutput.Add("logging into Minecraft Client with email: " + email);
-            if (!response.IsSuccess) // failed to automatically log in
-            {
-                response = login.Authenticate(email, pw);
-
-                if (!response.IsSuccess)
-                {
-                    //Console.WriteLine("error: " + response.Result.ToString());
-                    await Task.Delay(2000);
-                    throw new Exception(response.Result.ToString()); // failed to log in
-                }
-            }
-
-            // This session variable is the result of logging in and is used in MLaunchOption, in the Launch part below.
-            var session = response.Session;
-            // increase connection limit to fast download
-            System.Net.ServicePointManager.DefaultConnectionLimit = 256;
-
-            //var path = new MinecraftPath("game_directory_path");
-            var path = new MinecraftPath(); // use default directory
-
-            var launcher = new CMLauncher(path);
-
-
-            var launchOption = new MLaunchOption
-            {
-                MaximumRamMb = 2048,
-                FullScreen = false,
-                ScreenWidth = 800,
-                ScreenHeight = 400,
-                Session = session,
-            };
-
-            var process = await launcher.CreateProcessAsync("LabyMod-3-1.8.9", launchOption);
-            process.Start();
-            for (int i = 0; i < 26; i++)
+            try
             {
                 if (!runable)
                 {
                     return;
                 }
-                //minimize
-                IntPtr hWnd = FindWindow("Minecraft 1.8.9 ");
-                if (!hWnd.Equals(IntPtr.Zero))
+                var login = new MLogin();
+                var response = login.Authenticate(email, pw);
+                //dc.ConsoleOutput.Add("logging into Minecraft Client with email: " + email);
+                if (!response.IsSuccess) // failed to automatically log in
                 {
-                    ShowWindowAsync(hWnd, SW_SHOWMINIMIZED);
+                    response = login.Authenticate(email, pw);
+
+                    if (!response.IsSuccess)
+                    {
+                        //Console.WriteLine("error: " + response.Result.ToString());
+                        await Task.Delay(2000);
+                        throw new Exception(response.Result.ToString()); // failed to log in
+                    }
                 }
 
-                await Task.Delay(500);
-            }
-            KillWindow("javaw");
-            await Task.Delay(1000);
-        }
-        public async void SendWebhook(string title, string message, Discord.Color color)
-        {
-            string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
-            using (var client = new DiscordWebhookClient(lines[1]))
-            {
-                var embed = new EmbedBuilder
+                // This session variable is the result of logging in and is used in MLaunchOption, in the Launch part below.
+                var session = response.Session;
+                // increase connection limit to fast download
+                System.Net.ServicePointManager.DefaultConnectionLimit = 256;
+
+                //var path = new MinecraftPath("game_directory_path");
+                var path = new MinecraftPath(); // use default directory
+
+                var launcher = new CMLauncher(path);
+
+
+                var launchOption = new MLaunchOption
                 {
-                    Title = title,
-                    Description = message,
-                    Color = color
+                    MaximumRamMb = 2048,
+                    FullScreen = false,
+                    ScreenWidth = 800,
+                    ScreenHeight = 400,
+                    Session = session,
                 };
 
-                await client.SendMessageAsync(text: "", embeds: new[] { embed.Build() });
+                var process = await launcher.CreateProcessAsync("LabyMod-3-1.8.9", launchOption);
+                process.Start();
+                for (int i = 0; i < 26; i++)
+                {
+                    if (!runable)
+                    {
+                        return;
+                    }
+                    //minimize
+                    IntPtr hWnd = FindWindow("Minecraft 1.8.9 ");
+                    if (!hWnd.Equals(IntPtr.Zero))
+                    {
+                        ShowWindowAsync(hWnd, SW_SHOWMINIMIZED);
+                    }
+
+                    await Task.Delay(500);
+                }
+                KillWindow("javaw");
+                await Task.Delay(1000);
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show("Error in MC Worker: " + exception.Message);
+            }
+        }
+
+        /// <summary>
+        /// Sends a Webhook with title, message and color
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="message"></param>
+        /// <param name="color"></param>
+        public async void SendWebhook(string title, string message, Discord.Color color)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
+                using (var client = new DiscordWebhookClient(lines[1]))
+                {
+                    var embed = new EmbedBuilder
+                    {
+                        Title = title,
+                        Description = message,
+                        Color = color
+                    };
+
+                    await client.SendMessageAsync(text: "", embeds: new[] { embed.Build() });
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Webhook Error: " + exception.Message);
             }
 
 
         }
+        /// <summary>
+        /// finds kills the window with a given name
+        /// </summary>
+        /// <param name="name"></param>
         private static void KillWindow(string name)
         {
             foreach (var process in Process.GetProcessesByName(name))
@@ -327,6 +380,12 @@ namespace LabyBot
                 process.Kill();
             }
         }
+
+        /// <summary>
+        /// finds a window with a given name
+        /// </summary>
+        /// <param name="titleName"></param>
+        /// <returns></returns>
         public static IntPtr FindWindow(string titleName)
         {
             Process[] pros = Process.GetProcesses(".");

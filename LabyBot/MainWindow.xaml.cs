@@ -2,8 +2,6 @@
 using System.Windows;
 using System.Windows.Input;
 using Forms = System.Windows.Forms;
-using System.IO;
-using Squirrel;
 namespace LabyBot
 {
     /// <summary>
@@ -13,15 +11,15 @@ namespace LabyBot
     {
         readonly string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private readonly Forms.NotifyIcon _notifyIcon = new Forms.NotifyIcon();
+
         public MainWindow()
         {
-            
-            
             InitializeComponent();
         }
 
-        
-
+        /// <summary>
+        /// Minimizes the window
+        /// </summary>
         public void MinimizeAll()
         {
             this.Visibility = Visibility.Hidden;
@@ -40,6 +38,11 @@ namespace LabyBot
 
         }
 
+        /// <summary>
+        /// Dargs the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.LeftButton == MouseButtonState.Pressed)
@@ -48,6 +51,7 @@ namespace LabyBot
             }
         }
 
+        
         private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
@@ -55,19 +59,7 @@ namespace LabyBot
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
-            this.ShowInTaskbar = false;
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
-
-            _notifyIcon.Icon = new System.Drawing.Icon(@"Images\128.ico");
-            _notifyIcon.Text = "Labybot Client";
-            _notifyIcon.Click += NotifyIcon_Click;
-
-            _notifyIcon.ContextMenuStrip = new Forms.ContextMenuStrip();
-            _notifyIcon.ContextMenuStrip.Items.Add("Show", System.Drawing.Image.FromFile(@"Images\dock-window.png"), OnShowClicked);
-            _notifyIcon.ContextMenuStrip.Items.Add("Quit",System.Drawing.Image.FromFile(@"Images\close.png") ,OnQuitClicked);
-
-            _notifyIcon.Visible = true;
+            MinimizeAll();
             
         }
 

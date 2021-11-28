@@ -127,6 +127,9 @@ namespace LabyBot.MVVM.View
             WebStatus.Foreground = color;
         }
                 
+        /// <summary>
+        /// starts the web service
+        /// </summary>
         public async void WebInstaces()
         {
             dc.ConsoleOutput.Add("starting Web Driver");
@@ -149,6 +152,11 @@ namespace LabyBot.MVVM.View
             dc.ConsoleOutput.Add("finished Web Driver");
             ChangeWebStatus("stopped", Brushes.Red);
         }
+
+        /// <summary>
+        /// starts the mc instances
+        /// </summary>
+        /// <param name="runWeb"></param>
         public async void McInstances(bool runWeb)
         {
             dc.ConsoleOutput.Add("started Mc Driver");
@@ -181,7 +189,10 @@ namespace LabyBot.MVVM.View
 
         }
 
-        
+        /// <summary>
+        /// Kills all windows with the given name
+        /// </summary>
+        /// <param name="name"></param>
         private static void KillWindow(string name)
         {
             foreach (var process in Process.GetProcessesByName(name))
@@ -208,6 +219,12 @@ namespace LabyBot.MVVM.View
             return new IntPtr();
         }
 
+        /// <summary>
+        /// Sends a discord webhook
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="message"></param>
+        /// <param name="color"></param>
         public async void SendWebhook(string title, string message, Discord.Color color)
         {
             string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
@@ -225,6 +242,10 @@ namespace LabyBot.MVVM.View
 
 
         }
+
+        /// <summary>
+        /// Class for handling a Console
+        /// </summary>
         public class ConsoleContent : INotifyPropertyChanged
         {
             string consoleInput = string.Empty;

@@ -1,20 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 using System.Reflection;
-using Microsoft.Win32;
 using IWshRuntimeLibrary;
 
 namespace LabyBot.MVVM.View
@@ -57,14 +45,12 @@ namespace LabyBot.MVVM.View
                 Cred4.Text = lines[5];
                 Cred5.Text = lines[6];
             }
-            catch
+            catch(Exception exception)
             {
-
+                MessageBox.Show("Error when trying to load settings: " + exception.Message);
             }
             
         }
-
-
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {            
@@ -73,9 +59,9 @@ namespace LabyBot.MVVM.View
                 string destination = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
                 System.IO.File.Delete( destination + @"\Labybot.lnk"); 
             }
-            catch
+            catch(Exception exception)
             {
-                MessageBox.Show("Failed to remove from startup");
+                MessageBox.Show("Failed to remove from startup: " + exception.Message);
             }
             
         }
@@ -92,15 +78,11 @@ namespace LabyBot.MVVM.View
                 IWshShortcut shortcut = (IWshShortcut)wshShell.CreateShortcut(fileName);
                 shortcut.TargetPath = applocation;
                 shortcut.Save();
-
-
             }
-            catch
+            catch(Exception exception)
             {
-                MessageBox.Show("Failed to add to startup");
+                MessageBox.Show("Failed to add to startup: " + exception.Message);
             }
-            
-            
         }
     }
 }
