@@ -119,6 +119,8 @@ D:\Github repos\LabyBot\LabyBot\bin\Release\System.Interactive.Async.xml
 D:\Github repos\LabyBot\LabyBot\bin\Release\System.Linq.Async.xml
 D:\Github repos\LabyBot\LabyBot\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 D:\Github repos\LabyBot\LabyBot\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\Github repos\LabyBot\LabyBot\obj\Release\Interop.IWshRuntimeLibrary.dll
+D:\Github repos\LabyBot\LabyBot\obj\Release\LabyBot.csproj.ResolveComReference.cache
 D:\Github repos\LabyBot\LabyBot\obj\Release\Theme\MenuButtonTheme.baml
 D:\Github repos\LabyBot\LabyBot\obj\Release\MainWindow.g.cs
 D:\Github repos\LabyBot\LabyBot\obj\Release\MVVM\View\AboutView.g.cs
@@ -142,6 +144,3 @@ D:\Github repos\LabyBot\LabyBot\obj\Release\LabyBot.csproj.CoreCompileInputs.cac
 D:\Github repos\LabyBot\LabyBot\obj\Release\LabyBot.csproj.CopyComplete
 D:\Github repos\LabyBot\LabyBot\obj\Release\LabyBot.exe
 D:\Github repos\LabyBot\LabyBot\obj\Release\LabyBot.pdb
-D:\Github repos\LabyBot\LabyBot\obj\Release\LabyBot.csproj.AssemblyReference.cache
-D:\Github repos\LabyBot\LabyBot\obj\Release\Interop.IWshRuntimeLibrary.dll
-D:\Github repos\LabyBot\LabyBot\obj\Release\LabyBot.csproj.ResolveComReference.cache

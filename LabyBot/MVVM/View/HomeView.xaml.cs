@@ -80,18 +80,23 @@ namespace LabyBot.MVVM.View
 
             if (StartMinimized)
             {
-                wnd.MinimizeAll();
-                workhandler.SetRunable(true);
-                runable = true;
-                McInstances(true);
-                dc.ConsoleOutput.Add("starting all");
-            }
+                try
+                {
+                    wnd.MinimizeAll();
+                    runable = true;
+                    McInstances(true);
+                    dc.ConsoleOutput.Add("starting all");
+
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log("Error when Minimizing: " + ex.Message);
+                }}
         }
             
 
         private void StartAllButton_Click(object sender, RoutedEventArgs e)
         {
-            workhandler.SetRunable(true);
             runable = true;
             McInstances(true);
             dc.ConsoleOutput.Add("starting all");
@@ -99,14 +104,15 @@ namespace LabyBot.MVVM.View
 
         private void StopAllButton_Click(object sender, RoutedEventArgs e)
         {
-            workhandler.SetRunable(false);
             runable = false;
             dc.ConsoleOutput.Add("stopping all");
+            workhandler.AbortMcWorker();
+            workhandler.AbortWebWorker();
+            KillWindow("Firefox");
         }
 
         private void LaunchMC_Click(object sender, RoutedEventArgs e)
         {
-            workhandler.SetRunable(true);
             runable = true;
             McInstances(false);
         }
@@ -239,7 +245,6 @@ namespace LabyBot.MVVM.View
 
                 await client.SendMessageAsync(text: "", embeds: new[] { embed.Build() });
             }
-
 
         }
 

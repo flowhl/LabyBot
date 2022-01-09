@@ -9,7 +9,6 @@ namespace LabyBot
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private readonly Forms.NotifyIcon _notifyIcon = new Forms.NotifyIcon();
 
         public MainWindow()
@@ -22,6 +21,7 @@ namespace LabyBot
         /// </summary>
         public void MinimizeAll()
         {
+            Logger.Log("Minimizing");
             this.Visibility = Visibility.Hidden;
             this.ShowInTaskbar = false;
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
@@ -65,6 +65,7 @@ namespace LabyBot
 
         private void OnQuitClicked(object sender, EventArgs e)
         {
+            Logger.Log("Shutting Down");
             Application.Current.Shutdown();
         }        
 

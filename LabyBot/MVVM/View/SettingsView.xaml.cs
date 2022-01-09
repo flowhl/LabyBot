@@ -48,6 +48,7 @@ namespace LabyBot.MVVM.View
             catch(Exception exception)
             {
                 MessageBox.Show("Error when trying to load settings: " + exception.Message);
+                Logger.Log("Error when trying to load settings: " + exception.Message);
             }
             
         }
@@ -62,6 +63,7 @@ namespace LabyBot.MVVM.View
             catch(Exception exception)
             {
                 MessageBox.Show("Failed to remove from startup: " + exception.Message);
+                Logger.Log("Failed to remove from startup: " + exception.Message);
             }
             
         }
@@ -82,6 +84,7 @@ namespace LabyBot.MVVM.View
             catch(Exception exception)
             {
                 MessageBox.Show("Failed to add to startup: " + exception.Message);
+                Logger.Log("Failed to add to startup: " + exception.Message);
             }
         }
     }

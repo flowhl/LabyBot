@@ -169,7 +169,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\AbortableBackgroundWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Core\Workhandler.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="toggleswitch.xaml.cs">
       <DependentUpon>toggleswitch.xaml</DependentUpon>
     </Compile>

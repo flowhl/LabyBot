@@ -19,6 +19,8 @@ namespace LabyBot
 {
     class Workhandler
     {
+        AbortableBackgroundWorker webWorker = new AbortableBackgroundWorker();
+        AbortableBackgroundWorker mcWorker = new AbortableBackgroundWorker();
 
         private const int SW_SHOWMINIMIZED = 2;
 
@@ -26,7 +28,6 @@ namespace LabyBot
         private static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
-        bool runable = false;
         readonly string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         public Workhandler()
@@ -34,9 +35,18 @@ namespace LabyBot
 
         }
 
-        public void SetRunable(bool status)
+        public void AbortMcWorker()
         {
-            runable = status;
+            Logger.Log("Aborting MC Worker");
+            mcWorker.Abort();
+            mcWorker.Dispose();
+        }
+
+        public void AbortWebWorker()
+        {
+            Logger.Log("Aborting Web Worker");
+            webWorker.Abort();
+            webWorker.Dispose();
         }
 
         /// <summary>
@@ -46,11 +56,9 @@ namespace LabyBot
         /// <param name="pw"></param>
         public void StartWebWorker(string name, string pw)
         {
-            BackgroundWorker webWorker = new BackgroundWorker();
             webWorker.DoWork += WebWorker_DoWork;
             webWorker.RunWorkerCompleted += WebWorker_RunWorkerCompleted;
             webWorker.RunWorkerAsync(name + ";" + pw);
-
         }
 
         /// <summary>
@@ -60,7 +68,6 @@ namespace LabyBot
         /// <param name="pw"></param>
         public void StartMCWorker(string email, string pw)
         {
-            BackgroundWorker mcWorker = new BackgroundWorker();
             mcWorker.DoWork += MCworker_DoWork;
             mcWorker.RunWorkerCompleted += MCworker_RunWorkerCompleted;
             mcWorker.RunWorkerAsync(email + ";" + pw);
@@ -78,6 +85,7 @@ namespace LabyBot
         /// <param name="e"></param>
         async void WebWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            Logger.Log("Web Worker doing work");
             string name = e.Argument.ToString().Split(';')[0];
             string pw = e.Argument.ToString().Split(';')[1];
             try
@@ -85,9 +93,7 @@ namespace LabyBot
                 var service = FirefoxDriverService.CreateDefaultService();
                 service.HideCommandPromptWindow = true;
                 var options = new FirefoxOptions();
-                options.AddArgument("--headless");
-            
-
+               // options.AddArgument("--headless");
 
                 using (IWebDriver driver = new FirefoxDriver(service, options))
                 {
@@ -111,6 +117,7 @@ namespace LabyBot
                     catch (Exception exception)
                     {
                         MessageBox.Show("Webdriver error on initialization: " + exception.Message);
+                        Logger.Log("Webdriver error on initialization: " + exception.Message);
                     }
 
 
@@ -135,6 +142,7 @@ namespace LabyBot
                     catch (Exception exception)
                     {
                         MessageBox.Show("Error on 2step auth: " + exception.Message);
+                        Logger.Log("Error on 2step auth: " + exception.Message);
                     }
 
                     //Test if 2FA
@@ -144,11 +152,12 @@ namespace LabyBot
                         System.Windows.Forms.MessageBox.Show("please disable 2 factor auth on the account: " + name);
                         //dc.ConsoleOutput.Add("please disable 2 factor auth on the account: " + name);
                         SendWebhook(name, "please disable 2 factor auth on the account: " + name, Discord.Color.Red);
+                        Logger.Log("2FA needs to be disabled!");
                         return;
                     }
-                    catch (Exception exception)
+                    catch
                     {
-                        MessageBox.Show("Error on 2FA: " + exception.Message);
+                        ///everything is fine because there should not be a 2fa element
                     }
 
                     //Test if wrong pw
@@ -158,11 +167,12 @@ namespace LabyBot
                         driver.FindElement(By.XPath("//*[contains(text(), 'Wrong username/password')]"));
                         MessageBox.Show("wrong password for " + name);
                         SendWebhook(name, "wrong password for " + name, Discord.Color.Red);
+                        Logger.Log("wrong password for " + name);
                         return;
                     }
-                    catch (Exception exception)
+                    catch 
                     {
-                        MessageBox.Show("" + exception.Message);
+                        ///everything is fine because there should not be a wrong login message
                     }
 
                     //switch to dashboard
@@ -174,6 +184,7 @@ namespace LabyBot
                     catch(Exception exception)
                     {
                         MessageBox.Show("Error when trying to reach the Labymod dashboard: " + exception.Message);
+                        Logger.Log("Error when trying to reach the Labymod dashboard: " + exception.Message);
                     }
                     
 
@@ -186,12 +197,11 @@ namespace LabyBot
                     catch (Exception exception)
                     {
                         MessageBox.Show("Error when trying to accept the cookies: " + exception.Message);
+                        Logger.Log("Error when trying to accept the cookies: " + exception.Message);
                     }
 
                     try
                     {
-                        //driver.FindElement(By.CssSelector("button.btn.btn-sm.btn-custom.pull-right.claimRewardBtn")).Click();
-
                         var objects = driver.FindElements(By.CssSelector("button.btn.btn-sm.btn-custom.pull-right.claimRewardBtn"));
                         foreach (IWebElement obj in objects)
                         {
@@ -201,6 +211,7 @@ namespace LabyBot
                     catch
                     {
                         MessageBox.Show("no claimbutton found!");
+                        Logger.Log("no claimbutton found!");
                         try
                         {
                             driver.FindElement(By.CssSelector("span.status"));
@@ -208,6 +219,7 @@ namespace LabyBot
                         catch (Exception exception)
                         {
                             MessageBox.Show("Error when trying to claim: " + exception.Message);
+                            Logger.Log("Error when trying to claim: " + exception.Message);
                         }
 
                     }
@@ -216,6 +228,7 @@ namespace LabyBot
                         if (driver.FindElement(By.CssSelector("div.dailyCoinValue")).Text == "??")
                         {
                             MessageBox.Show("no reward claimable");
+                            Logger.Log("no reward claimable");
                             SendWebhook(name, "no reward claimable", Discord.Color.Red);
                         }
                         else
@@ -226,6 +239,7 @@ namespace LabyBot
                     catch (Exception exception)
                     {
                         MessageBox.Show("Error when checking if reward was claimed: " + exception.Message);
+                        Logger.Log("Error when checking if reward was claimed: " + exception.Message);
                     }
                     try
                     {
@@ -247,6 +261,7 @@ namespace LabyBot
                     catch (Exception exception)
                     {
                         MessageBox.Show("Error logging out: " + exception.Message);
+                        Logger.Log("Error logging out: " + exception.Message);
                     }
 
                     KillWindow("Firefox");
@@ -255,6 +270,7 @@ namespace LabyBot
             catch (Exception exception)
             {
                 MessageBox.Show("Error creating firefox driver: " + exception.Message);
+                Logger.Log("Error creating firefox driver: " + exception.Message);
             }
         }
         private void MCworker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -269,15 +285,12 @@ namespace LabyBot
         /// <param name="e"></param>
         async void MCworker_DoWork(object sender, DoWorkEventArgs e)
         {
+            Logger.Log("MC Worker doing work");
             string email = e.Argument.ToString().Split(';')[0];
             string pw = e.Argument.ToString().Split(';')[1];
 
             try
             {
-                if (!runable)
-                {
-                    return;
-                }
                 var login = new MLogin();
                 var response = login.Authenticate(email, pw);
                 //dc.ConsoleOutput.Add("logging into Minecraft Client with email: " + email);
@@ -317,10 +330,6 @@ namespace LabyBot
                 process.Start();
                 for (int i = 0; i < 26; i++)
                 {
-                    if (!runable)
-                    {
-                        return;
-                    }
                     //minimize
                     IntPtr hWnd = FindWindow("Minecraft 1.8.9 ");
                     if (!hWnd.Equals(IntPtr.Zero))
