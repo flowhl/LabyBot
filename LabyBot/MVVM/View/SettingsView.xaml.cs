@@ -47,8 +47,7 @@ namespace LabyBot.MVVM.View
             }
             catch(Exception exception)
             {
-                MessageBox.Show("Error when trying to load settings: " + exception.Message);
-                Logger.Log("Error when trying to load settings: " + exception.Message);
+                Logger.Log("Error when trying to load one or more lines in settings txt: " + exception.Message);
             }
             
         }

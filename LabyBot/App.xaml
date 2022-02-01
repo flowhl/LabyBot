@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:LabyBot"
              xmlns:viewModel="clr-namespace:LabyBot.MVVM.ViewModel"
              xmlns:view="clr-namespace:LabyBot.MVVM.View"
-             StartupUri="MainWindow.xaml"             
-             >
+             StartupUri="MainWindow.xaml">
     
     <Application.Resources>
         <ResourceDictionary>

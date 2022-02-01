@@ -9,17 +9,13 @@ namespace LabyBot
 {
     static class Logger
     {
-
         static readonly string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        static Logger()
+        public static void Log(string Message)
         {
             if (!File.Exists(docPath + "/LabyLogs.txt"))
             {
                 StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
             }
-        }
-        public static void Log(string Message)
-        {
             TextWriter tw = new StreamWriter(docPath + "/LabyLogs.txt", true);
             tw.WriteLine(DateTime.Now.ToString() + " | " + Message);
             tw.Close();

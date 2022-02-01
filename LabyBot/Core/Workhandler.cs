@@ -93,7 +93,7 @@ namespace LabyBot
                 var service = FirefoxDriverService.CreateDefaultService();
                 service.HideCommandPromptWindow = true;
                 var options = new FirefoxOptions();
-               // options.AddArgument("--headless");
+                options.AddArgument("--headless");
 
                 using (IWebDriver driver = new FirefoxDriver(service, options))
                 {
