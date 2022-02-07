@@ -34,3 +34,154 @@
 [13/10/21 20:58:45] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
 [13/10/21 20:58:51] info: Program: Building embedded zip file for Setup.exe
 [13/10/21 20:59:03] info: Program: Finished Squirrel Updater
+[06/02/22 14:37:12] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.0.2.nupkg
+[06/02/22 14:37:12] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[06/02/22 14:37:12] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.2.nupkg
+[06/02/22 14:37:12] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.2.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.0.2-full.nupkg
+[06/02/22 14:37:13] info: ReleasePackage: Extracting dependent packages: []
+[06/02/22 14:37:13] info: ReleasePackage: Removing unnecessary data
+[06/02/22 14:37:13] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[06/02/22 14:37:14] info: DeltaPackageBuilder: Extracting .\Releases\LabyBot-1.0.1-full.nupkg and D:\Github repos\LabyBot\Releases\LabyBot-1.0.2-full.nupkg into C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempb
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\CmlLib.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.MsDelta.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.PatchApi.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Core.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Rest.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Webhook.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\DiscordWebhook.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\geckodriver.exe hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\ICSharpCode.SharpZipLib.dll hasn't changed, writing dummy file
+[06/02/22 14:37:15] info: DeltaPackageBuilder: Delta patching C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\lib\net45\LabyBot.exe => C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempb\lib\net45\LabyBot.exe
+[06/02/22 14:37:15] info: DeltaPackageBuilder: \lib\net45\LabyBot.exe.config hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\LabyBot_ExecutionStub.exe hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\MaterialDesignColors.dll hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\MaterialDesignThemes.Wpf.dll hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\Microsoft.Bcl.AsyncInterfaces.dll hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.dll hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Mdb.dll hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Pdb.dll hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Rocks.dll hasn't changed, writing dummy file
+[06/02/22 14:37:16] info: DeltaPackageBuilder: \lib\net45\Newtonsoft.Json.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\NuGet.Squirrel.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\SevenZip.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\SharpCompress.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\Squirrel.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\System.Collections.Immutable.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\System.Interactive.Async.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\System.Linq.Async.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\System.Runtime.CompilerServices.Unsafe.dll hasn't changed, writing dummy file
+[06/02/22 14:37:17] info: DeltaPackageBuilder: \lib\net45\System.Threading.Tasks.Extensions.dll hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: DeltaPackageBuilder: \lib\net45\WebDriver.dll hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: DeltaPackageBuilder: \lib\net45\AdditionalFiles\geckodriver.exe hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: DeltaPackageBuilder: \lib\net45\Images\128.ico hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: DeltaPackageBuilder: \lib\net45\Images\128.png hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: DeltaPackageBuilder: \lib\net45\Images\close.png hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: DeltaPackageBuilder: \lib\net45\Images\dock-window.png hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: DeltaPackageBuilder: \lib\net45\Images\play.png hasn't changed, writing dummy file
+[06/02/22 14:37:18] info: Program: Building embedded zip file for Setup.exe
+[06/02/22 14:37:28] info: Program: Finished Squirrel Updater
+[06/02/22 14:57:46] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.0.3.nupkg
+[06/02/22 14:57:46] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[06/02/22 14:57:46] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.3.nupkg
+[06/02/22 14:57:46] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.3.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.0.3-full.nupkg
+[06/02/22 14:57:47] info: ReleasePackage: Extracting dependent packages: []
+[06/02/22 14:57:47] info: ReleasePackage: Removing unnecessary data
+[06/02/22 14:57:47] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[06/02/22 14:57:48] info: DeltaPackageBuilder: Extracting .\Releases\LabyBot-1.0.2-full.nupkg and D:\Github repos\LabyBot\Releases\LabyBot-1.0.3-full.nupkg into C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempb
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\CmlLib.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.MsDelta.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.PatchApi.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Core.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Rest.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Webhook.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\DiscordWebhook.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\geckodriver.exe hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\ICSharpCode.SharpZipLib.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: Delta patching C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\lib\net45\LabyBot.exe => C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempb\lib\net45\LabyBot.exe
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\LabyBot.exe.config hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\LabyBot_ExecutionStub.exe hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\MaterialDesignColors.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\MaterialDesignThemes.Wpf.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\Microsoft.Bcl.AsyncInterfaces.dll hasn't changed, writing dummy file
+[06/02/22 14:57:49] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Mdb.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Pdb.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Rocks.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\Newtonsoft.Json.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\NuGet.Squirrel.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\SevenZip.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\SharpCompress.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\Squirrel.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\System.Collections.Immutable.dll hasn't changed, writing dummy file
+[06/02/22 14:57:50] info: DeltaPackageBuilder: \lib\net45\System.Interactive.Async.dll hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\System.Linq.Async.dll hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\System.Runtime.CompilerServices.Unsafe.dll hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\System.Threading.Tasks.Extensions.dll hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\WebDriver.dll hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\AdditionalFiles\geckodriver.exe hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\Images\128.ico hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\Images\128.png hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\Images\close.png hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\Images\dock-window.png hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: DeltaPackageBuilder: \lib\net45\Images\play.png hasn't changed, writing dummy file
+[06/02/22 14:57:51] info: Program: Building embedded zip file for Setup.exe
+[06/02/22 14:58:00] info: Program: Finished Squirrel Updater
+[06/02/22 15:00:35] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.0.3.nupkg
+[06/02/22 15:00:35] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[06/02/22 15:00:35] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.3.nupkg
+[06/02/22 15:00:35] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.0.3.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.0.3-full.nupkg
+[06/02/22 15:00:36] info: ReleasePackage: Extracting dependent packages: []
+[06/02/22 15:00:36] info: ReleasePackage: Removing unnecessary data
+[06/02/22 15:00:36] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[06/02/22 15:00:38] info: DeltaPackageBuilder: Extracting .\Releases\LabyBot-1.0.2-full.nupkg and D:\Github repos\LabyBot\Releases\LabyBot-1.0.3-full.nupkg into C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempb
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\CmlLib.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.MsDelta.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\DeltaCompressionDotNet.PatchApi.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Core.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Rest.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\Discord.Net.Webhook.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\DiscordWebhook.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\geckodriver.exe hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\ICSharpCode.SharpZipLib.dll hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\ICSharpCode.SharpZipLib.pdb not found in base package, marking as new
+[06/02/22 15:00:38] info: DeltaPackageBuilder: Delta patching C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\lib\net45\LabyBot.exe => C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempb\lib\net45\LabyBot.exe
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\LabyBot.exe.config hasn't changed, writing dummy file
+[06/02/22 15:00:38] info: DeltaPackageBuilder: \lib\net45\LabyBot.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\LabyBot_ExecutionStub.exe hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\MaterialDesignColors.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\MaterialDesignColors.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\MaterialDesignThemes.Wpf.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\MaterialDesignThemes.Wpf.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Microsoft.Bcl.AsyncInterfaces.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Mdb.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Mdb.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Pdb.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Pdb.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Rocks.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Mono.Cecil.Rocks.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\Newtonsoft.Json.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\NuGet.Squirrel.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\NuGet.Squirrel.pdb not found in base package, marking as new
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\SevenZip.dll hasn't changed, writing dummy file
+[06/02/22 15:00:39] info: DeltaPackageBuilder: \lib\net45\SharpCompress.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\Squirrel.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\Squirrel.pdb not found in base package, marking as new
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\System.Collections.Immutable.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\System.Interactive.Async.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\System.Linq.Async.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\System.Runtime.CompilerServices.Unsafe.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\System.Threading.Tasks.Extensions.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\WebDriver.dll hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\AdditionalFiles\geckodriver.exe hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\Images\128.ico hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\Images\128.png hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\Images\close.png hasn't changed, writing dummy file
+[06/02/22 15:00:40] info: DeltaPackageBuilder: \lib\net45\Images\dock-window.png hasn't changed, writing dummy file
+[06/02/22 15:00:41] info: DeltaPackageBuilder: \lib\net45\Images\play.png hasn't changed, writing dummy file
+[06/02/22 15:00:41] info: Program: Building embedded zip file for Setup.exe
+[06/02/22 15:00:50] info: Program: Finished Squirrel Updater
