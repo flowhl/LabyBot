@@ -185,3 +185,30 @@
 [06/02/22 15:00:41] info: DeltaPackageBuilder: \lib\net45\Images\play.png hasn't changed, writing dummy file
 [06/02/22 15:00:41] info: Program: Building embedded zip file for Setup.exe
 [06/02/22 15:00:50] info: Program: Finished Squirrel Updater
+[10/02/22 18:27:27] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.1.0.nupkg
+[10/02/22 18:27:27] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[10/02/22 18:27:27] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.1.0.nupkg
+[10/02/22 18:27:27] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.1.0.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.1.0-full.nupkg
+[10/02/22 18:27:27] info: ReleasePackage: Extracting dependent packages: []
+[10/02/22 18:27:27] info: ReleasePackage: Removing unnecessary data
+[10/02/22 18:27:27] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[10/02/22 18:27:29] info: Program: Building embedded zip file for Setup.exe
+[10/02/22 18:27:39] info: Program: Finished Squirrel Updater
+[10/02/22 19:04:03] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.1.1.nupkg
+[10/02/22 19:04:03] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[10/02/22 19:04:03] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.1.1.nupkg
+[10/02/22 19:04:03] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.1.1.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.1.0-full.nupkg
+[10/02/22 19:04:04] info: ReleasePackage: Extracting dependent packages: []
+[10/02/22 19:04:04] info: ReleasePackage: Removing unnecessary data
+[10/02/22 19:04:04] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[10/02/22 19:04:06] info: Program: Building embedded zip file for Setup.exe
+[10/02/22 19:04:19] info: Program: Finished Squirrel Updater
+[10/02/22 19:04:49] info: Program: Starting Squirrel Updater: --releasify LabyBot.1.1.1.nupkg
+[10/02/22 19:04:49] info: Program: Bootstrapper EXE found at:D:\Github repos\LabyBot\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[10/02/22 19:04:49] info: Program: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.1.1.nupkg
+[10/02/22 19:04:49] info: ReleasePackage: Creating release package: D:\Github repos\LabyBot\Releases\LabyBot.1.1.1.nupkg => D:\Github repos\LabyBot\Releases\LabyBot-1.1.1-full.nupkg
+[10/02/22 19:04:50] info: ReleasePackage: Extracting dependent packages: []
+[10/02/22 19:04:50] info: ReleasePackage: Removing unnecessary data
+[10/02/22 19:04:50] info: ReleasePackage: No release notes found in C:\Users\Florian Wahl\AppData\Local\SquirrelTemp\tempa\LabyBot.nuspec
+[10/02/22 19:04:52] info: Program: Building embedded zip file for Setup.exe
+[10/02/22 19:05:06] info: Program: Finished Squirrel Updater

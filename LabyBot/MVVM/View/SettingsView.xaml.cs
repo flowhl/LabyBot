@@ -23,7 +23,7 @@ namespace LabyBot.MVVM.View
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] newlines = { StartMinimizedInput.IsChecked + "", webhookInput.Text, Cred1.Text, Cred2.Text, Cred3.Text, Cred4.Text, Cred5.Text };
+            string[] newlines = { "00/00/0000" , StartMinimizedInput.IsChecked + "", webhookInput.Text, Cred1.Text, Cred2.Text, Cred3.Text, Cred4.Text, Cred5.Text };
             
             using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "labybotsettings.txt")))
             {
@@ -35,15 +35,15 @@ namespace LabyBot.MVVM.View
         private void LoadSettings()
         {
             string[] lines = System.IO.File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
-            StartMinimizedInput.IsChecked = Convert.ToBoolean(lines[0]);
-            webhookInput.Text = lines[1];
+            StartMinimizedInput.IsChecked = Convert.ToBoolean(lines[1]);
+            webhookInput.Text = lines[2];
             try
             {
-                Cred1.Text = lines[2];
-                Cred2.Text = lines[3];
-                Cred3.Text = lines[4];
-                Cred4.Text = lines[5];
-                Cred5.Text = lines[6];
+                Cred1.Text = lines[3];
+                Cred2.Text = lines[4];
+                Cred3.Text = lines[5];
+                Cred4.Text = lines[6];
+                Cred5.Text = lines[7];
             }
             catch(Exception exception)
             {

@@ -31,6 +31,7 @@ namespace LabyBot.MVVM.View
         bool runable = false;
         string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         bool StartMinimized = false;
+        bool ranToday = false;
         public HomeView()
         {
             InitializeComponent();
@@ -42,7 +43,8 @@ namespace LabyBot.MVVM.View
                 try
                 {
                     string[] templines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
-                    StartMinimized = Convert.ToBoolean(templines[0]);
+                    StartMinimized = Convert.ToBoolean(templines[1]);
+                    ranToday = templines[0].Contains(DateTime.Today.ToString("d"));
                 }
                 catch
                 {
@@ -52,7 +54,7 @@ namespace LabyBot.MVVM.View
             else
             {
                 MessageBox.Show("no settings file found - created new one in documents");
-                string[] newlines = { false + "", "" };
+                string[] newlines = {"00/00/0000" ,false + "", "" };
 
                 using (StreamWriter outputFile = new StreamWriter(System.IO.Path.Combine(docPath, "labybotsettings.txt")))
                 {
@@ -61,8 +63,9 @@ namespace LabyBot.MVVM.View
                 }
             }
 
-            if (StartMinimized)
+            if (StartMinimized && !ranToday)
             {
+
                 try
                 {
                     wnd.MinimizeAll();
@@ -74,15 +77,28 @@ namespace LabyBot.MVVM.View
                 catch (Exception ex)
                 {
                     Logger.Log("Error when Minimizing: " + ex.Message);
-                }}
+                }
+            }
+            else
+            {
+                if(StartMinimized && ranToday)
+                {
+                    Application.Current.Shutdown();
+                }
+            }
         }
             
 
         private void StartAllButton_Click(object sender, RoutedEventArgs e)
         {
+            if (ranToday)
+            {
+                dc.ConsoleOutput.Add("Allready ran today!");
+                return;
+            }
+            dc.ConsoleOutput.Add("starting all");
             runable = true;
             McInstances(true);
-            dc.ConsoleOutput.Add("starting all");
         }
 
         private void StopAllButton_Click(object sender, RoutedEventArgs e)
@@ -96,12 +112,22 @@ namespace LabyBot.MVVM.View
 
         private void LaunchMC_Click(object sender, RoutedEventArgs e)
         {
+            if (ranToday)
+            {
+                dc.ConsoleOutput.Add("Allready ran today!");
+                return;
+            }
             runable = true;
             McInstances(false);
         }
 
         private void WebClaimer_Click(object sender, RoutedEventArgs e)
         {
+            if (ranToday)
+            {
+                dc.ConsoleOutput.Add("Allready ran today!");
+                return;
+            }
             WebInstaces();
             ChangeWebStatus("running", Brushes.Green);
         }
@@ -124,7 +150,7 @@ namespace LabyBot.MVVM.View
             dc.ConsoleOutput.Add("starting Web Driver");
             string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
 
-            for (int i = 2; i < lines.Length; i++)
+            for (int i = 3; i < lines.Length; i++)
             {
                 string[] temp = lines[i].Split(';');
                 if (temp[0] == "" || temp[0] == null)
@@ -152,7 +178,7 @@ namespace LabyBot.MVVM.View
             ChangeMcStatus("running", Brushes.Green);
             string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
 
-            for (int i = 2; i < lines.Length; i++)
+            for (int i = 3; i < lines.Length; i++)
             {
                 if (!runable)
                 {
@@ -217,7 +243,7 @@ namespace LabyBot.MVVM.View
         public async void SendWebhook(string title, string message, Discord.Color color)
         {
             string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
-            using (var client = new DiscordWebhookClient(lines[1]))
+            using (var client = new DiscordWebhookClient(lines[2]))
             {
                 var embed = new EmbedBuilder
                 {

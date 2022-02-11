@@ -13,13 +13,13 @@ using OpenQA.Selenium.Support.UI;
 using Microsoft.VisualBasic;
 using Discord.Webhook;
 using Discord;
-
+using System.Collections.Generic;
 
 namespace LabyBot
 {
     class Workhandler
     {
-        AbortableBackgroundWorker webWorker = new AbortableBackgroundWorker();
+        List<AbortableBackgroundWorker> webWorkers = new List<AbortableBackgroundWorker>();
         AbortableBackgroundWorker mcWorker = new AbortableBackgroundWorker();
 
         private const int SW_SHOWMINIMIZED = 2;
@@ -45,8 +45,12 @@ namespace LabyBot
         public void AbortWebWorker()
         {
             Logger.Log("Aborting Web Worker");
-            webWorker.Abort();
-            webWorker.Dispose();
+            foreach (var webWorker in webWorkers)
+            {
+                webWorker.Abort();
+                webWorker.Dispose();
+            }
+            
         }
 
         /// <summary>
@@ -56,9 +60,11 @@ namespace LabyBot
         /// <param name="pw"></param>
         public void StartWebWorker(string name, string pw)
         {
-            webWorker.DoWork += WebWorker_DoWork;
-            webWorker.RunWorkerCompleted += WebWorker_RunWorkerCompleted;
-            webWorker.RunWorkerAsync(name + ";" + pw);
+            var newWorker = new AbortableBackgroundWorker();
+            webWorkers.Add(newWorker);
+            newWorker.DoWork += WebWorker_DoWork;
+            newWorker.RunWorkerCompleted += WebWorker_RunWorkerCompleted;
+            newWorker.RunWorkerAsync(name + ";" + pw);
         }
 
         /// <summary>
@@ -90,7 +96,7 @@ namespace LabyBot
             string pw = e.Argument.ToString().Split(';')[1];
             try
             {
-                var service = FirefoxDriverService.CreateDefaultService();
+                var service = FirefoxDriverService.CreateDefaultService();                
                 service.HideCommandPromptWindow = true;
                 var options = new FirefoxOptions();
                 options.AddArgument("--headless");
@@ -101,7 +107,7 @@ namespace LabyBot
                     try
                     {
                         driver.Navigate().GoToUrl("https://www.labymod.net/en");
-                        await Task.Delay(5000);
+                        await Task.Delay(3000);
 
                         driver.FindElement(By.CssSelector("a.openLogin")).Click(); //open login
                         driver.FindElement(By.Id("username")).SendKeys(name); //send name
@@ -185,6 +191,7 @@ namespace LabyBot
                     {
                         MessageBox.Show("Error when trying to reach the Labymod dashboard: " + exception.Message);
                         Logger.Log("Error when trying to reach the Labymod dashboard: " + exception.Message);
+                        return;
                     }
                     
 
@@ -198,6 +205,7 @@ namespace LabyBot
                     {
                         MessageBox.Show("Error when trying to accept the cookies: " + exception.Message);
                         Logger.Log("Error when trying to accept the cookies: " + exception.Message);
+                        return;
                     }
 
                     try
@@ -220,6 +228,7 @@ namespace LabyBot
                         {
                             MessageBox.Show("Error when trying to claim: " + exception.Message);
                             Logger.Log("Error when trying to claim: " + exception.Message);
+                            return;
                         }
 
                     }
@@ -230,6 +239,7 @@ namespace LabyBot
                             MessageBox.Show("no reward claimable");
                             Logger.Log("no reward claimable");
                             SendWebhook(name, "no reward claimable", Discord.Color.Red);
+                            return;
                         }
                         else
                         {
@@ -238,7 +248,6 @@ namespace LabyBot
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show("Error when checking if reward was claimed: " + exception.Message);
                         Logger.Log("Error when checking if reward was claimed: " + exception.Message);
                     }
                     try
@@ -260,9 +269,13 @@ namespace LabyBot
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show("Error logging out: " + exception.Message);
                         Logger.Log("Error logging out: " + exception.Message);
+                        return;
                     }
+
+                    string[] arrLine = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
+                    arrLine[0] = DateTime.Today.ToString("d");
+                    File.WriteAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"), arrLine);
 
                     KillWindow("Firefox");
             }
@@ -345,6 +358,7 @@ namespace LabyBot
             catch(Exception exception)
             {
                 MessageBox.Show("Error in MC Worker: " + exception.Message);
+                Logger.Log("Error in MC Worker: " + exception.Message);
             }
         }
 
@@ -359,7 +373,7 @@ namespace LabyBot
             try
             {
                 string[] lines = File.ReadAllLines(System.IO.Path.Combine(docPath, "labybotsettings.txt"));
-                using (var client = new DiscordWebhookClient(lines[1]))
+                using (var client = new DiscordWebhookClient(lines[2]))
                 {
                     var embed = new EmbedBuilder
                     {
@@ -373,7 +387,7 @@ namespace LabyBot
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Webhook Error: " + exception.Message);
+                Logger.Log("Webhook Error: " + exception.Message);
             }
 
 
